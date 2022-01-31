@@ -1,0 +1,7 @@
+ # bentofile.yaml
+service: "bento.py:svc"
+include:
+ - "bento.py"
+python:
+  packages:
+   - scikit-learn
