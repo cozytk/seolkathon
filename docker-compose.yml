@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  app:
+    build: ./app
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./app:/app
+  model:
+    image: 'iris_classifier:5ddgxjecu65znlg6'
+    ports:
+      - "5000:5000"
