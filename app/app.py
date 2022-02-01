@@ -10,10 +10,8 @@ species = ['setosa', 'versicolor', 'virginica']
 
 if st.sidebar.button('predict'):
     with st.spinner('Wait for it...'):
-        # response = requests.post(f'http://127.0.0.1:5000/predict',
+        # model: {DOCKER_IP}
         response = requests.post(f'http://model:5000/predict',
-        # response = requests.post(f'http://192.168.0.11:5000/predict',
-        # response = requests.post(f'http://{environ["MY_PUBLIC_IP"]}:5000/predict',
                                 json=[sepal_l, sepal_w, petal_l, petal_w])
         label = int(response.text)
         st.write(species[label])
