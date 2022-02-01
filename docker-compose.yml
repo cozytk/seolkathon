@@ -7,6 +7,6 @@ services:
     volumes:
       - ./app:/app
   model:
-    image: 'iris_classifier:5ddgxjecu65znlg6'
+    image: 'summarize:latest'
     ports:
       - "5000:5000"

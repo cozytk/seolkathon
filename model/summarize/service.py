@@ -2,7 +2,7 @@ import json
 import bentoml
 from bentoml.io import JSON
 
-summerizer = bentoml.transformers.load_runner(tag ="sequenceclassification:latest", tasks='summarization')
+summerizer = bentoml.transformers.load_runner(tag ="summarize:latest", tasks='summarization')
 
 svc = bentoml.Service("summarize", runners=[summerizer])
 
