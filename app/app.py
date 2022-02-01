@@ -1,17 +1,14 @@
-import streamlit as st
+import json
 import requests
+import streamlit as st
 
-sepal_l = st.number_input('꽃받침의 길이는?')
-sepal_w = st.number_input('꽃받침의 너비는?')
-petal_l = st.number_input('꽃잎의 길이는?')
-petal_w = st.number_input('꽃잎의 너비는?')
-species = ['setosa', 'versicolor', 'virginica']
+context = dict()
+context['sentence'] = st.text_input('요약할 문장을 입력하시오.')
 
 if st.sidebar.button('predict'):
     with st.spinner('Wait for it...'):
         # model: {DOCKER_IP}
-        response = requests.post(f'http://model:5000/predict',
-                                json=[sepal_l, sepal_w, petal_l, petal_w])
-        label = int(response.text)
-        st.write(species[label])
+        response = requests.post('http://model:5000/predict', json=json.dumps(context))
+        result = json.loads(response.text)
+        st.write(result['summary_text'])
     st.success('Done!')
