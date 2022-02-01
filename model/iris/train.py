@@ -1,7 +1,5 @@
-from sklearn import svm, datasets
-
 import bentoml
-
+from sklearn import svm, datasets
 
 if __name__ == "__main__":
     # Load training data
