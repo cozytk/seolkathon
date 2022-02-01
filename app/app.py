@@ -1,6 +1,5 @@
 import streamlit as st
 import requests
-from os import environ
 
 sepal_l = st.number_input('꽃받침의 길이는?')
 sepal_w = st.number_input('꽃받침의 너비는?')
