@@ -9,6 +9,7 @@ python = "^3.8"
 scikit-learn = "^1.0.2"
 bentoml = "1.0.0.a3"
 transformers = "^4.16.1"
+torch = "^1.10.2"
 
 [tool.poetry.dev-dependencies]
 
