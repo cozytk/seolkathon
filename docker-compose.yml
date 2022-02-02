@@ -7,6 +7,6 @@ services:
     volumes:
       - ./app:/app
   model:
-    image: 'summarize:latest'
+    image: 'generate:latest'
     ports:
       - "5000:5000"
